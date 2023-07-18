@@ -1,0 +1,14 @@
+@media (orientation: portrait) {
+    body {
+        transform: rotate(90deg);
+        transform-origin: bottom left;
+        position: absolute;
+        top: -100vw;
+        height: 100vw;
+        width: 100vh;
+    }
+}
+
+@media (orientation: landscape) {
+    
+}

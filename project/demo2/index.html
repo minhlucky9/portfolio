@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>OKG Minigame</title>
+
+    <style>
+        @font-face {
+            font-family: Avenir;
+            src: url('fonts/avenir_ff/AvenirLTStd-Roman.otf');
+        }
+
+        @font-face {
+            font-family: Roboto;
+            src: url('fonts/roboto/Roboto-Regular.ttf');
+        }
+
+        body {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="minigameui.css">
+    <link rel="stylesheet" href="minigame-popup.css">
+    <link rel="stylesheet" href="minigame-potrait.css">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/codes/ui-component.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Skranji' rel='stylesheet'>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2PD8QH460"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K2PD8QH460');
+    </script>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('wheel', function(e) {
+        e.ctrlKey && e.preventDefault();
+      }, {
+        passive: false,
+      });
+
+    
+    </script>
+    <div id="mainScene"></div>
+    <!-- GUI -->
+    <div class="GUI">
+        <div class="loading-page">
+            <img class="image-background" src="images/loading/pvp_ngang 1.png" alt="error">
+            <img class="image-background" id="loading1" src="images/loading/loading1.png" alt="error" style=" opacity: 0;">
+            <img class="image-background" id="loading2" src="images/loading/loading2.png" alt="error" style=" opacity: 0;">
+            <div id="loading3" style=" display: none;">
+                <img class="image-background" id="loading3" src="images/loading/loading3.png" alt="error">
+                <div class="loading-bar">
+                    <div class="label-progress">
+                        <span id="asset-progress" style="position: absolute;width: 100%;
+                        right: 0;top:50px">WARNING: The content of Forbidden Land is not related to the official version of Ookeenga the Game </span>
+                        <span id="progress-percent" style="position: absolute;width: 100%;
+                        right: 0;letter-spacing: 1px;">10%</span>
+                    </div>
+                    <div class="progress-bar" style="width: 0%;">
+                        <div class="bar-highlight"></div>
+                        <div class="bar-glow"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-login-code mouseEvent" style="display: none;">
+                <img class="image-background" src="images/loading/pvp_ngang2.png" alt="error">
+                <div class="popup-content">
+                    <img src="images/UI/my-account-bg.png" alt="error" style="width: 100%;
+                height: 100%;position: absolute;">
+                    <div class="popup-login-code-label">WELCOME!</div>
+                    <div class="login-code-content" style="display: block;">
+                        <div class="login-code-input">
+                            <p>Please input the Whitelist code sent to your email</p>
+                            <input type="text">
+                            <div class="login-code-btn inactive-btn">START THE GAME</div>
+                        </div>
+                        <div class="login-code-tips">To prevent any loss, please do not share your Whitelist code with anyone</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-message-announcement mouseEvent" style="display: none;">
+                <div class="popup-content">
+                    <img src="images/UI/message_popup_bg.png" alt="error" style="width: 100%;
+                height: 100%;position: absolute;">
+                    <div class="close-btn">
+                        <img src="images/UI/close-btn.png" alt="error" width="40" height="40">
+                    </div>
+                    <div class="popup-message-content">
+                        <div class="popup-title">Invalid ID</div>
+                        <div class="popup-description">
+                            This is not a correct Hero ID. 
+                            Please try again
+                        </div>
+                        <div class="button-container">
+                            <div class="accept-btn">Yes</div>
+                            <div class="decline-btn">No</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-not-support-mobile mouseEvent" style="display: none;">
+                <div class="popup-content">
+                    <img src="images/UI/dev-notice-bg.png" alt="error" style="width: 100%;
+                height: 100%;position: absolute;">
+                    <div class="popup-message-content">
+                        <div class="popup-title">DEVELOPER’S NOTICE</div>
+                        <div class="popup-description">
+                            How embarassing...this current version of Ookeenga: Forbidden Land does not support mobile devices. Please explore the Forbidden Land using personal computers (PCs) only.
+
+                            We are so sorry for this inconvenience *antuk cry*
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-event-close-announce mouseEvent" style="display: none;">
+                <div class="popup-content">
+                    <img src="images/UI/event-close-bg.png" alt="error" style="width: 100%;
+                height: 100%;position: absolute;">
+                    <div class="popup-message-content">
+                        <div class="popup-title">DEVELOPER’S NOTICE</div>
+                        <div class="popup-description">
+                            Season 1 of Ookeenga: Forbidden Land has ended! 
+                            Thank you for your participation!
+
+                            List of all top players and lottery winners will be announced on Ookeenga Telegram Channel in a few days. Stay tuned!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="minigameUI" style="display: none;">
+            <div class="left-content">
+                <div class="avatar mouseEvent">
+                    <div class="avatar-group">
+                        <img src="images/UI/Border_Demo 1.png" alt="error" width="156" height="156" style="position: absolute;">
+                        <img src="images/UI/Mask group.png" id="avatar-img" alt="error" width="150" height="150" style="margin: 3px;border-radius: 100px;">
+                    </div>
+                    
+                    <div class="settings-and-info">
+                        <img src="images/UI/ABCD 1.png" alt="error" width="230">
+                        <div class="setting-btn">
+                            <img src="images/UI/setting-btn.png" alt="error" width="55">
+                        </div>
+                        <div class="info-btn">
+                            <img src="images/UI/info-btn.png" alt="error" width="50">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events mouseEvent">
+                    <img src="images/UI/event-btn.png" alt="error" width="135" height="135">
+                    <span>Events</span>
+                </div>
+
+                <div class="server-time">
+                    <span>Server Time</span>
+                    <div class="time-stamp">26/4 17:12 GMT+0</div>
+                </div>
+            </div>
+            <div class="center-content">
+                <div class="place-name" style="display: none;">
+                    <img src="images/UI/place-name.png" alt="error">
+                </div>
+
+                <div class="instruction" style="display: none">
+                    <span>Press</span> 
+                    <img src="images/UI/E-icon.png" alt="error"> 
+                    <span>to talk</span>
+                </div>
+
+                <div class="announcement" style="display: none">
+                    <img src="images/UI/announcement-bg.png" alt="error">
+                    <span>+ 1 BLUE CRYSTAL</span>
+                </div>
+
+                <div class="inventory mouseEvent">
+                    <div class="inventory-child">
+                        <img src="images/UI/inventory-box.png" alt="error">
+                        <div class="items">
+                            
+                        </div>
+                        <div class="quantity"></div>
+                        <div class="tool-box">
+                            <div class="tool-box-name">Blue Crystal</div>
+                            <div class="tool-box-description"></div>
+                            <img class="tool-box-triangle" src="images/UI/Polygon 2.png" alt="error">
+                        </div>
+                    </div>
+                    <div class="inventory-child">
+                        <img src="images/UI/inventory-box.png" alt="error">
+                        <div class="items">
+                          
+                        </div>
+                        <div class="quantity"></div>
+                        <div class="tool-box">
+                            <div class="tool-box-name">Crystal Shard</div>
+                            <div class="tool-box-description"></div>
+                            <img class="tool-box-triangle" src="images/UI/Polygon 2.png" alt="error">
+                        </div>
+                    </div>
+                    <div class="inventory-child">
+                        <img src="images/UI/inventory-box.png" alt="error">
+                        <div class="items">
+                            
+                        </div>
+                        <div class="quantity"></div>
+                        <div class="tool-box">
+                            <div class="tool-box-name">Crystal Shard</div>
+                            <div class="tool-box-description"></div>
+                            <img class="tool-box-triangle" src="images/UI/Polygon 2.png" alt="error">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="btn-quest-minimize">
+                    <img src="images/UI/btn-yellow.png" alt="error">
+                    <img src="images/UI/leaf-icon.png" alt="error" style="position: absolute;top: 10px;left: 19px;">
+                </div>
+                <div class="quests mouseEvent">
+                    <div class="quest-label">
+                        <img src="images/UI/Yellow_M.png" class="label-background" alt="error">
+                        <div class="quest-label-text">
+                            <img src="images/UI/leaf-icon.png" alt="error">
+                            <span>QUEST</span>
+                        </div>
+                        <div class="hide-quest-btn">
+                            <img src="images/UI/close-quest.png" alt="error" width="13">
+                        </div>
+                    </div>
+                    <div class="quest-content">
+                        <!-- <div class="tab-label">WEEKLY QUEST</div>
+                        <div class="weekly-quest"></div> -->
+                        <div class="tab-label">DAILY QUEST</div>
+                        <div class="daily-quest"></div>
+                    </div>
+                </div>
+                <div class="minimap mouseEvent">
+                    <img src="images/UI/leaderboard-bg.png" alt="error">
+                    <canvas id="minimap-container" style="width: calc(100% - 20px); height: calc(100% - 20px); margin: 10px;"></canvas>
+                </div>
+            </div>
+
+            <div class="joystick-controller mouseEvent" style="visibility: hidden; pointer-events: none;">
+                <div class="position-controller mouseEvent">
+                    <img src="images/joystick-base.png" width="130" height="130"/>
+                    <div id="stick1" style="position: absolute; left:32px; top:32px;">
+                        <img src="images/button_move.png" width="64" height="64"/>
+                    </div>
+                </div>
+
+                <div class="jump-btn mouseEvent">
+                    <img src="images/button_jump.png" alt="error" width="64" height="64">
+                </div>
+
+                <div class="talk-btn mouseEvent">
+                    <img src="images/button_talk.png" alt="error" width="64" height="64">
+                </div>
+    
+                <div class="rotation-controller mouseEvent">
+                    <img src="images/joystick-base.png" width="130" height="130"/>
+                    <div id="stick2" style="position: absolute; left:32px; top:32px;">
+                        <img src="images/button_view.png" width="64" height="64"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-settings mouseEvent" style="display: none;">
+                <div class="popup-content">
+                    <img src="images/UI/popup-setting-bg.png" alt="error" style="width: 100%;
+                    height: 100%;position: absolute;z-index: -1;">
+                    <div class="popup-setting-label">SETTINGS</div>
+                    <div class="close-btn">
+                        <img src="images/UI/close-btn.png" alt="error" width="40" height="40">
+                    </div>
+                    <div class="setting-options">
+                        <div class="slider-option" id="sound-slider">
+                            <span>Sound</span>
+                            <div class="range-slider">
+                                <div class="range-background"></div> 
+                                <div class="range-val"></div> 
+                                <input type="range" min="0" max="100" class="slider">
+                            </div>   
+                        </div>
+
+                        <div class="slider-option" id="music-slider">
+                            <span>Music</span>
+                            <div class="range-slider">
+                                <div class="range-background"></div> 
+                                <div class="range-val"></div> 
+                                <input type="range" min="0" max="100" class="slider">
+                            </div>   
+                        </div>
+                        <div class="seperate-line">
+                            
+                        </div>
+                        <div class="radio-button-option">
+                            <span>Display</span>
+                            <input type="radio" id="normal" name="fav_quality" value="normal" checked>
+                            <div class="radio-label">
+                                <label for="normal">Normal mode</label>
+                                <label for="normal" style="font-size: 14px;">Faster speed</label>
+                            </div>
+                            
+                            <input type="radio" id="ultra" name="fav_quality" value="ultra">
+                            <div class="radio-label">
+                                <label for="ultra">Ultra mode</label>
+                                <label for="ultra" style="font-size: 14px;">More beautiful</label>
+                            </div>
+                            
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-events mouseEvent" style="display: none;">
+                <div class="popup-content">
+                    <img src="images/UI/event-new-bg.png" alt="error" style="width: 100%;
+                    height: 100%;position: absolute;z-index: -1;">
+                    <div class="popup-events-label">EVENTS</div>
+                    <div class="close-btn">
+                        <img src="images/UI/close-btn.png" alt="error" width="40" height="40">
+                    </div>
+                    <div class="events-slider">
+                        <!-- <div class="prev-btn">
+                            <img src="images/arrow_L 1.png" alt="error">
+                        </div> -->
+                        <div class="events-container">
+                            <div class="container-slide">
+                                <a class="events-child" target="_blank" href="https://dsc.gg/ookeenga">
+                                    <img src="images/UI/image 42.png" alt="error">
+                                    <div class="readmore-btn" >JOIN NOW</div>
+                                </a>
+                                <a class="events-child" target="_blank" href="https://twitter.com/ookeenga">
+                                    <img src="images/UI/event2.png" alt="error">
+                                    <div class="readmore-btn" >JOIN NOW</div>
+                                </a>
+                                <a class="events-child" target="_blank" href="https://t.me/ookeenga_global">
+                                    <img src="images/UI/image 44.png" alt="error">
+                                    <div class="readmore-btn" >JOIN NOW</div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- <div class="next-btn">
+                            <img src="images/arrow_R 1.png" alt="error">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="popup-account-info" class="popup-my-account mouseEvent" style="display: none;">
+                <div class="popup-content">
+                    <img src="images/UI/my-account-bg.png" alt="error" style="width: 100%;
+                height: 100%;position: absolute;">
+                    <div class="popup-my-account-label">MY ACCOUNT</div>
+                    <div class="close-btn">
+                        <img src="images/UI/close-btn.png" alt="error" width="40" height="40">
+                    </div>
+                    <div class="my-account-content">
+                       <div class="account-avatar">
+                            <img src="images/UI/Stone_Border_Square 1.png" alt="error" class="border-avatar">
+                            <img src="images/UI/Muu GIF 512 1.png" alt="error" class="character-img">
+                            <div class="character-details">
+                                <div class="character-details-info">
+                                    <div class="details-text">
+                                        <div class="label">Race</div>
+                                        <div class="info" id="account-race">Muu</div>
+                                    </div>
+                                    <div class="details-icon">
+                                        <img src="images/UI/Race_Muu.png" alt="error">
+                                    </div>
+                                </div>
+                                <div class="character-details-info">
+                                    <div class="details-text">
+                                        <div class="label">Class</div>
+                                        <div class="info" id="account-class">Tank</div>
+                                    </div>
+                                    <div class="details-icon">
+                                        <img src="images/UI/tanker 1.png" alt="error">
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                        
+                       <div class="account-infomation">
+                            <div class="account-id" style="margin-bottom: 20px;">
+                                <div class="label" id="account-name">GENESIS WARRIOR</div>
+                                <div class="info" style="display: none">
+                                    <span>ID: </span>
+                                    <span id="account-id">1231@QJHGgH99o83</span>
+                                    <div class="copy-id-btn"><img src="images/UI/icon-copy.png" alt="error"></div>
+                                </div>
+                            </div>
+
+                            <div class="character-bodypart">
+                                <div class="label">Bodyparts</div>
+                                <div class="list-bodypart">
+                                    <div class="part-variation">
+                                        <!-- <img class="border" src="images/UI/Epic_Frame.png" alt="error"> -->
+                                        <img class="part-img" src="images/UI/antuk-luminous-antenna 1.png" alt="error">
+                                        <div class="part-rare">Common</div>
+                                    </div>
+
+                                    <div class="part-variation">
+                                        <img class="part-img" src="images/UI/montak-misty-eyes 1.png" alt="error">
+                                        <div class="part-rare">Common</div>
+                                    </div>
+
+                                    <div class="part-variation">
+                                        <img class="part-img" src="images/UI/krakee-rugged-limbs 1.png" alt="error">
+                                        <div class="part-rare">Common</div>
+                                    </div>
+
+                                    <div class="part-variation">
+                                        <img class="part-img" src="images/UI/muu-bloodthirsty-mind 1.png" alt="error">
+                                        <div class="part-rare">Common</div>
+                                    </div>
+
+                                    <div class="part-variation">
+                                        <img class="part-img" src="images/UI/krakee-gracious-wings 1.png" alt="error">
+                                        <div class="part-rare">Common</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="account-activity">
+                                <div class="label">Activities</div>
+                                <div class="collect-activity">
+                                    <div class="collect-item">
+                                        <img src="images/UI/Crystal.png" alt="error">
+                                        <span>Red Diamonds: </span><span id="account-collected-coin">20</span>
+                                    </div>
+                                    <div class="collect-item">
+                                        <img src="images/UI/scroll.png" alt="error">
+                                        <span>Lucky Tickets: </span><span id="account-collected-ticket">1</span>
+                                    </div>
+                                </div>
+                                <div class="login-activity">
+                                    <span>Last Logged in: </span><span id="account-last-login"> 22nd 2022 | 12:24  (GMT +0)</span>
+                                </div>
+                            </div>
+
+                            <!-- <div class="change-hero-btn">CHANGE HERO</div> -->
+                       </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-introduction mouseEvent" style="display: none;">
+                <div class="popup-content">
+                    <img src="images/UI/event-new-bg.png" alt="error" style="width: 100%;
+                    height: 100%;position: absolute;z-index: -1;">
+                    <div class="popup-introduction-label">INTRODUCTION</div>
+                    <div class="close-btn">
+                        <img src="images/UI/close-btn.png" alt="error" width="40" height="40">
+                    </div>
+                    <div class="introduction-slider">
+                        <div class="prev-btn">
+                            <img src="images/UI/Vector 3791.png" alt="error">
+                        </div>
+                        <div class="introduction-container">
+                            <div class="container-slide">
+                                <div class="introduction-child" id="intro-slide-1">
+                                    <div class="intro-paragraph" style="padding-bottom: 0;">
+                                        <div class="label">
+                                            <span class="label-number">1</span>
+                                            <span>ABOUT FORBIDDEN LAND</span>
+                                        </div>
+                                        <div class="content">
+                                            Ookeenga: Forbidden Land is the place when NFT owners can fully view and test the 3D NFT Heroes they purchased from Ookeenga INO and earn cool rewards at the same time. It's also an opportunity for selected Whitelist players to experience the land feature of Ookeenga first-handed. 
+                                            <br><span class="text-golden"><span class="text-bold">(*) The content of the Forbidden Land is not related to the official version of Ookeenga the Game.</span></span> 
+                                        </div>
+                                    </div>
+                                    <div class="intro-paragraph">
+                                        <div class="label">
+                                            <span class="label-number">2</span>
+                                            <span>EVENT TIME</span>
+                                        </div>
+                                        <div class="content">
+                                            First season of the Forbidden Land will be active from <span class="text-golden text-bold">May 16 to May 23 2022</span>. 
+                                            <span>Once the event ends, the Land will be temporarily closed. </span>
+                                            <br>
+                                            <span>Lucky winners will then be announced on Ookeenga Global Telegram Channel. </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="introduction-child" id="intro-slide-2">
+                                    <div class="intro-paragraph" style="text-align: center;">
+                                        <div class="label">
+                                            <span class="label-number">3</span>
+                                            <span>HOW TO GET REWARDS? - FOR NFT OWNERS</span>
+                                        </div>
+                                        <div class="content" style="padding-left: 0;">
+                                            <div class="images-x-paragraph">
+                                                <img src="images/UI/shard-to-crystal.png" alt="error">
+                                                <div class="paragraph">
+                                                    <span class="text-golden">STEP 01:</span> Player collect ‘Blue Crystal’ item on the map and from NPC quest.
+                                                </div>
+                                            </div>
+                                            <div class="images-x-paragraph">
+                                                <img src="images/UI/crystal-to-scroll.png" alt="error">
+                                                <div class="paragraph">
+                                                    <span class="text-golden">STEP 02:</span> Exchange items
+                                                    <br><span class="text-golden">5 Blue Crystal = 1 Red Diamond</span>
+                                                    <br><span class="text-golden">7 Red Diamond = 1 Lucky Ticket</span>
+                                                    <br><span>Player may get maximum 2 Red Diamonds a day.</span>
+                                                </div>
+                                            </div>
+                                            <div class="images-x-paragraph">
+                                                <img src="images/UI/scroll-to-money.png" alt="error">
+                                                <div class="paragraph">
+                                                    <span class="text-golden">STEP 03:</span> Wait for the Lottery Draw Event on Ookeenga Telegram Channel. Top Ranked Player and some random people with lucky numbers will receive big prizes. 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="introduction-child" id="intro-slide-3">
+                                    <div class="intro-paragraph" style="text-align: center;">
+                                        <div class="label">
+                                            <span class="label-number">4</span>
+                                            <span>HOW TO GET REWARDS? - FOR FREE USERS</span>
+                                        </div>
+                                        <div class="content" style="padding-left: 0;">
+                                            <div class="images-x-paragraph">
+                                                <img src="images/UI/shard-to-crystal.png" alt="error">
+                                                <div class="paragraph">
+                                                    <span class="text-golden">STEP 01:</span> Player collect ‘Blue Crystal’ item on the map and from NPC quest.
+                                                </div>
+                                            </div>
+                                            <div class="images-x-paragraph">
+                                                <img src="images/UI/2redto1ticket.png" alt="error">
+                                                <div class="paragraph">
+                                                    <span class="text-golden">STEP 02:</span> Exchange items
+                                                    <br><span class="text-golden">5 Blue Crystal = 1 Red Diamond</span>
+                                                    <br><span class="text-golden">2 Red Diamond = 1 Lucky Ticket</span>
+                                                    <br><span>Player may get maximum 2 Red Diamonds a day.</span>
+                                                </div>
+                                            </div>
+                                            <div class="images-x-paragraph">
+                                                <img src="images/UI/scroll-to-money.png" alt="error">
+                                                <div class="paragraph">
+                                                    <span class="text-golden">STEP 03:</span> Wait for the Lottery Draw Event on Ookeenga Telegram Channel. Players with lucky numbers will receive decent prizes.  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="introduction-child" id="intro-slide-4">
+                                    <div class="intro-paragraph" style="text-align: center;">
+                                        <div class="label">
+                                            <span class="label-number">5</span>
+                                            <span style="color: #FF5833;">IMPORTANT NOTICE!</span>
+                                        </div>
+                                        <div class="content" style="padding-left: 0;">
+                                            <div class="images-x-paragraph" style="margin: 0">
+                                                <img src="images/UI/Crystal2.png" alt="error" style="object-fit: none;">
+                                                <div class="paragraph">
+                                                    <span class="text-golden">Blue Crystals</span> are temporary. At <span class="text-golden">00:00 UTC</span> everyday, your collected Blue Crystal will be reset. 
+                                                    <br>
+                                                    <span>Red Diamonds and Lucky Ticket are permanent. To prevent loss, please convert all Blue Crystals to Red Diamonds before the day ends.</span>
+                                                </div>
+                                            </div>
+                                            <div class="images-x-paragraph" style="margin: 0">
+                                                <img src="images/UI/scroll.png" alt="error" style="object-fit: none;">
+                                                <div class="paragraph">
+                                                    <span class="text-golden">Lucky Tickets</span> awarded to NFT Owners and Free Users may look identical, but the item value is absolutely different! The prize pool for NFT Owners is 
+                                                    <span class="text-golden">multiple times bigger</span> than Free User’s.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="introduction-child" id="intro-slide-5">
+                                    <div class="intro-paragraph" style="text-align: center; padding: 10px;">
+                                        <div class="label">
+                                            <span class="label-number">6</span>
+                                            <span>CONTROL GUIDE</span>
+                                        </div>
+                                        <div class="content" style="padding-left: 0;">
+                                            <div class="intro-control">
+                                                <!-- <p>CONTROL ON PC</p> -->
+                                                <div class="intro-control-content" style="padding-top: 30px;">
+                                                    <div class="intro-control-child" style="width: 25%;"> 
+                                                        <img src="images/UI/wasd.png" alt="error">
+                                                        <div class="control-label">Move</div>
+                                                    </div>
+                                                    <div class="intro-control-child" style="width: 20%; margin: 0 10%;"> 
+                                                        <img src="images/UI/intro-space.png" alt="error">
+                                                        <div class="control-label">Jump</div>
+                                                    </div>
+                                                    <div class="intro-control-child" style="width: 8%;"> 
+                                                        <img src="images/UI/intro-e.png" alt="error" style="padding: 0 8px;">
+                                                        <div class="control-label">Interact</div>
+                                                    </div>  
+						    <div class="intro-control-child" style="margin: auto; margin-top: 40px;">
+                                                        <div class="intro-control-text">
+                                                            <span style="margin-right: 20px;width: 12px;display: inline-block;">A</span><span>Move left</span>
+                                                        </div>
+                                                        <div class="intro-control-text">
+                                                            <span style="margin-right: 20px;width: 12px;display: inline-block;">W</span><span>Move forward</span>
+                                                        </div>
+                                                        <div class="intro-control-text">
+                                                            <span style="margin-right: 20px;width: 12px;display: inline-block;">D</span><span>Move right</span>
+                                                        </div>
+                                                        <div class="intro-control-text">
+                                                            <span style="margin-right: 20px;width: 12px;display: inline-block;">S</span><span>Move backward</span>
+                                                        </div>
+                                                        <div class="intro-control-text">
+                                                            <span style="margin-right: 20px;width: 12px;display: inline-block;">E</span><span>Interact</span>
+                                                        </div>  
+                                                    </div>   
+                                                    
+                                                    <div class="intro-control-child" style="margin: 0 20px;">
+                                                        <div style="font-family: 'Avenir';
+                                                        text-align: center;">Steer mouse to change
+                                                            camera angle</div>
+                                                        <img src="images/UI/mousecontrol.png" alt="error">
+                                                    </div>    
+                                                    
+                                                    <div class="intro-control-child" style="margin: auto; margin-top: 40px;">
+                                                        <div style="font-family: 'Avenir';
+                                                        text-align: center;">Click mouse to switch 
+                                                        camera movement mode</div>
+                                                        <img style="width: 30%;" src="images/UI/intro_lock_cam.png" alt="error">
+                                                    </div>                                             
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="introduction-child" id="intro-slide-6">
+                                    <div class="left-content">
+                                        <div class="intro-button">
+                                            <div class="button-content">
+                                                <img src="images/UI/leaderboard-btn.png" alt="error">
+                                                <span>Leaderboard</span>
+                                            </div>
+                                            <div class="seperator"></div>
+                                            <div class="button-description">
+                                                <span style="font-size: 15px;">LEADERBOARD: </span>
+                                                <span>View the list of top players</span>
+                                            </div>
+                                        </div>
+                                        <div class="intro-button">
+                                            <div class="button-content">
+                                                <img src="images/UI/event-btn.png" alt="error">
+                                                <span>Events</span>
+                                            </div>
+                                            <div class="seperator"></div>
+                                            <div class="button-description">
+                                                <span style="font-size: 15px;">EVENTS: </span>
+                                                <span>Hot news and events about Ookeenga game</span>
+                                            </div>
+                                        </div>
+                                        <div class="intro-avatar">
+                                            <div class="avatar-content">
+                                                <img src="images/UI/Player Info.png" alt="error" style="bottom: 0;left: -15px;">
+                                                <img src="images/UI/Vector 380.png" alt="error" style="bottom: 120px;left: 68px;">
+                                                <img src="images/UI/Vector 381.png" alt="error" style="bottom: 100px;left: 150px;">
+                                                <img src="images/UI/Vector 382.png" alt="error" style="bottom: 55px;left: 220px;">
+                                            </div>
+                                            <div class="avatar-description">
+                                                <div style="margin-bottom: 25px;">
+                                                    <span style="font-size: 15px;">USER INFO: </span>
+                                                    <span>View info about the hero you are playing. </span>
+                                                </div>
+                                                <div style="margin-bottom: 30px;">
+                                                    <span style="font-size: 15px;">SETTINGS: </span>
+                                                    <span>Adjust sound volume and graphic quality</span>
+                                                </div>
+                                                <div >
+                                                    <span style="font-size: 15px;">Introduction: </span>
+                                                    <span>Show these information slides</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="right-content">
+                                        <div class="intro-quest">
+                                            <div class="quest-content">
+                                                <img src="images/UI/Quest block.png" alt="error" style="left: -50px;top: 20px;">
+                                                <img src="images/UI/Vector 385.png" alt="error" style="top: 37px;left: -30px;">
+                                            </div>
+                                            <div class="quest-description">
+                                                <span style="font-size: 15px;">QUEST: </span>
+                                                <span>View what you need to do in the game</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="intro-minimap">
+                                            <div class="minimap-content">
+                                                <img src="images/UI/leaderboard-bg.png" alt="error" width="200" height="200">
+                                                <img src="images/minimap_small.png" alt="error" width="200" height="200">
+                                                <img src="images/minimap_player.png" alt="error" width="100" height="100" style="left: 56px;top: 50px;">
+                                                <img src="images/UI/Vector 386.png" alt="error" style="top: -10px;left: 130px;">
+                                            </div>
+                                            <div class="minimap-description">
+                                                <span style="font-size: 15px;">MINIMAP: </span>
+                                                <span>Show your hero’s position in the World</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="next-btn">
+                            <img src="images/UI/Vector 379.png" alt="error">
+                        </div>
+                        <div class="slide-navigation">
+                            <div class="navigation-child selected"></div>
+                            <div class="navigation-child"></div>
+                            <div class="navigation-child"></div>
+                            <div class="navigation-child"></div>
+                            <div class="navigation-child"></div>
+                            <div class="navigation-child"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-finish-quest mouseEvent" style="display: none;">
+                <div class="popup-content">
+                    <img src="images/UI/my-account-bg.png" alt="error" style="width: 100%;
+                height: 100%;position: absolute;">
+                    <div class="popup-finish-quest-label">AWESOME!</div>
+                    <div class="close-btn">
+                        <img src="images/UI/close-btn.png" alt="error" width="40" height="40">
+                    </div>
+                    <div class="finish-quest-content">
+                       <div class="quest-reward">
+                          <img src="images/UI/Crystal2.png" alt="error"> 
+                          <span>x5</span>
+                       </div>
+                       <div class="quest-announce">
+                           <span class="quest-name text-golden">“Gift of the Elder”</span><span> quest has been completed.</span> <br>
+                           <span class="reward-announce"></span><br>
+                           <span class="text-golden ticket-code"></span>
+                           <br>
+                           <span>(To close this popup, click anywhere.)</span>
+                       </div>
+                       <div class="popup-tips">
+                            <span></span>
+                       </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-complete mouseEvent" style="display: none;">
+                <div class="popup-content">
+                    <img src="images/UI/my-account-bg.png" alt="error" style="width: 100%;
+                height: 100%;position: absolute;">
+                    <div class="popup-complete-label">GOODJOB!</div>
+                    <div class="close-btn">
+                        <img src="images/UI/close-btn.png" alt="error" width="40" height="40">
+                    </div>
+                    <div class="popup-complete-content">
+                       <div class="popup-title" style="margin: 30px 0;">ALL DAILY QUESTS COMPLETED!</div>
+                        <div class="quest-announce">
+                            <span>That’s all for today!</span><br>
+                            <span>The Lucky Ticket you collected has been sent to your email.</span><br>
+                            <span class="announce-description">New quests will be available tomorrow.</span>
+                        </div>
+                        <div class="button-container">
+                            <div class="accept-btn back-to-game-btn">BACK TO GAME</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-importance-notice mouseEvent" style="display: none;">
+                <div class="popup-content">
+                    <img src="images/UI/message_popup_bg.png" alt="error" style="width: 100%;
+                height: 100%;position: absolute;">
+                    <div class="popup-message-content">
+                        <div class="popup-title">IMPORTANT NOTICE</div>
+                        <div class="popup-description">
+                            Blue Crystal are only temporary collectibles. At the end of the <br> 
+                            day (GMT+0), all shards in the map and in your inventory will <br> 
+                            be reset. 
+                            <ul>
+                                <li>Please convert all your shards into Red Diamond before the day end</li>
+                                <li>Please convert all your shards into Red Diamond before quitting the game</li>
+                            </ul>
+                            <input type="checkbox" id="isReadNotice" name="isReadNotice" value="true"> <label for="isReadNotice">I fully understand the issue. Don’t show this message again</label>
+                        </div>
+                        <div class="button-container">
+                            <div class="accept-btn">CONTINUE PLAYING</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="NPCDialog mouseEvent" style="display: none;">
+            <div class="dialog-content">
+                <p>Ban co muon chien dau cung toi ahaha</p>
+            </div>
+            <div class="dialog-button-list">
+                <div class="dialog-btn orange-bg">Receive</div>
+                <div class="dialog-btn orange-bg">Receive</div>
+                <div class="dialog-btn orange-bg">Receive</div>
+            </div>
+        </div>
+
+        
+
+
+    </div>
+
+
+    <!-- Main Libs -->
+    <script src="js/libs/mains/three.min.js"></script>
+    <script src="js/libs/mains/stats.min.js"></script>
+    <script src="js/libs/mains/inflate.min.js"></script>
+    <script src="js/libs/mains/fflate.min.js"></script>
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/joystick.js"></script>
+
+
+    <!-- Loaders -->
+    <script src="js/libs/loaders/FBXLoader.js"></script>
+    <script src="js/libs/loaders/GLTFLoader.js"></script>
+    <!-- <script src="js/libs/loaders/RGBELoader.js"></script> -->
+    <!-- <script src="js/libs/loaders/PMREMGenerator.js"></script> -->
+    <!--  -->
+    <!-- <script src="js/libs/loaders/ObjectLoader.js"></script> -->
+    <!-- <script src="js/libs/loaders/SVGLoader.js"></script> -->
+    <!-- <script src="js/libs/loaders/TextureLoader.js"></script> -->
+
+    <!--post processing-->
+    <script src="js/libs/postprocessing/Shaders/CopyShader.js"></script>
+    <script src="js/libs/postprocessing/EffectComposer.js"></script>
+    <script src="js/libs/postprocessing/ShaderPass.js"></script>
+    <script src="js/libs/postprocessing/RenderPass.js"></script>
+    <script src="js/libs/postprocessing/Shaders/GammaCorrectionShader.js"></script>
+
+    <script src="js/libs/postprocessing/Shaders/LuminosityHighPassShader.js"></script>
+    <script src="js/libs/postprocessing/UnrealBloomPass.js"></script>
+
+    <!-- Extra -->
+    <script src="js/libs/extras/OrbitControls.js"></script>
+    <script src="js/libs/ammos/ammo.js"></script>
+    <script src="js/libs/ammos/physics.js"></script>
+    <script src="js/libs/extras/SkeletonUtils.js"></script>
+    <script src="js/libs/extras/Water.js"></script>
+    <script src="js/libs/extras/Treeswing.js"></script>
+    <script src="js/libs/extras/ParticleEngine.js"></script>
+    <script src="js/libs/extras/ParticleEngineFire.js"></script>
+    <script src="js/libs/extras/ParticleEngineExamples.js"></script>
+    <script src="js/libs/mains/stats.min.js"></script>
+
+    <!-- NPC Data -->
+    <script src="js/data/npc_elder_data.js"></script>
+    <script src="js/data/npc_altar_tree_data.js"></script>
+    <script src="js/data/npc_blacksmith_data.js"></script>
+    <script src="js/data/npc_flute_data.js"></script>
+
+    <!-- My Source Code -->
+    <script src="js/codes/index.js"></script>
+    <script src="js/codes/APIController.js"></script>
+    <script src="js/codes/BillboardController.js"></script>
+    <script src="js/codes/Minimap.js"></script>	
+    <script src="js/codes/LoadingEnvironment.js"></script>
+    <script src="js/codes/ItemGenerator.js"></script>
+    <script src="js/codes/AnimatorController.js"></script>
+    <script src="js/codes/QuestController.js"></script>
+    <script src="js/codes/NPCController.js"></script>
+    <script src="js/codes/playerController.js"></script>
+    <script src="js/codes/AudioController.js"></script>
+    <script src="js/codes/sceneSetup.js"></script>
+
+</body>
+
+</html>

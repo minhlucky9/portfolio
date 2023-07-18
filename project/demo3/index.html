@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>HAI801 - Othello</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="init">
+<!--
+    <div class="row">
+        <div class="column">
+            <figure>
+                <img src="src/T.png" onclick='createTreeOTMM();'/>
+            </figure>
+        </div>
+        <div class="column">
+            <figure>
+                <img src="src/E.png" onclick='createTreeOT();'/>
+            </figure>
+        </div>
+        <div class="column">
+            <figure>
+                <img src="src/S.png" onclick='createTreeOTMMAB();'/>
+            </figure>
+        </div>
+        <div class="column">
+            <figure>
+                <img src="src/L.png" onclick='createTreeOTA();'/>
+            </figure>
+        </div>
+    </div>
+    <button onclick="createAIvsAI()">AI contre AI</button>
+-->
+</div>
+
+
+
+<div id="controls" style="display:none">
+    <p>AI vs AI</p>
+    <select id="joueur1">
+        <option value="ale">Random</option>
+        <option value="glu">Greedy</option>
+        <option value="Mm">MinMax</option>
+        <option value="ab" selected>AlphaBeta</option>
+        <option value="player" selected>Player</option>
+    </select>
+    <span>⚪️</span>
+    <span style="background: white;font-size: 18px;margin: 20px;">contre</span>
+    <span>⚫️</span>
+    <select id="joueur2">
+        <option value="ale">Random</option>
+        <option value="glu">Greedy</option>
+        <option value="Mm">MinMax</option>
+        <option value="ab" selected>AlphaBeta</option>
+    </select>
+    <button style="margin-left: 20px;" onclick="CommencerAIcontreAI()">Commencer</button>
+    <button style="margin-left: 20px;" onclick="resetPlateau()">Reset</button>
+    <br>
+    <br>
+</div>
+
+<div id="arbre">
+
+     
+</div>
+
+
+<script src="node.js"></script>
+<script src="main.js"></script>
+<script src="CM_problem.js"></script>
+<script src="tictactoe.js"></script>
+<script src="othello.js"></script>
+
+<script src="https://replit.com/public/js/replit-badge.js" theme="magenta" defer></script>
+</body>
+
+<script>
+	createAIvsAI();
+</script>
+
+</html>

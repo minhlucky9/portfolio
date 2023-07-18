@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<title>Manual-v2</title>
+	<script src="build/three.js"></script>
+	<!-- <script src="js/builds/WebGL.js"></script> -->
+	<script src="jsm/libs/stats.min.js"></script>
+	<script src="jsm/libs/inflate.min.js"></script>
+	<script src="jsm/loaders/FBXLoader.js"></script>
+	<script src="jsm/libs/hammer.js"></script>
+
+	<script src="jsm/loaders/GLTFLoader.js"></script>
+
+	<script src="jsm/objects/Water.js"></script>
+	<script src="jsm/objects/Reflector.js"></script>
+
+	<script src="jsm/controls/OrbitControls.js"></script>
+	
+	<!-- <link rel="shortcut icon" type="image/png" href="UI/reload.png"/> -->
+	
+	<link rel="stylesheet" type="text/css" href="v2-manual.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+</head>
+<body>
+	<div class="main-container" id="main-container"></div>
+	<div id="btn-screen" class="btn-main" style="display: none;">
+			<div id="btn-fullscreen" class="btn-screen" style="display: block;">
+				<span style="font-size:18px;" class="fas" onclick="openFullscreen()">&#xf31e;</span>
+				<span class="tooltiptext">Toàn màn hình</span>
+			</div>
+			<div id="btn-closedscreen" class="btn-screen"  style="display: none;">
+				<span style="font-size:18px;" class="fas" onclick="closeFullscreen()">&#xf78c;</span>
+				<span class="tooltiptext">Thu nhỏ</span>
+			</div>
+			<!-- <div class="btn-screen" >
+				<span style='font-size:24px' class='fas'>&#xf00d;</span>
+			</div> -->
+			<div class="btn-screen" id="btn-setting" >
+				<span style='font-size:18px' class='fas'>&#xf013;</span>
+				<span class="tooltiptext">Cài đặt chung</span>
+			</div>
+			<div class="btn-screen" id="btn-intruction">
+				<span style='font-size:18px' class='fas'>&#xf128;</span>
+				<span class="tooltiptext">Hướng dẫn</span>
+			</div>
+			<div class="btn-screen" id="btn-resetposition">
+				<span style='font-size:18px' class='fas'>&#xf2f1;</span>
+				<span class="tooltiptext">Về vị trí gốc</span>
+			</div>
+			<div class="btn-screen" id="btn-auto">
+				<!-- <span style='font-size:24px' class='fas'>&#xf031;</span> -->
+				<a href="v2-automatic.html" style="text-decoration: none; color: white">
+					<span style='font-size:20px'>A</span>
+				</a>	
+				<span class="tooltiptext">Chế độ tự động</span>
+			</div>
+			<div class="btn-screen" id="btn-home">
+				
+				<span style='font-size:18px;' class='fa'><a href="#" onclick="myFunction()" style="color: white;text-decoration: none;">&#xf015;</a></span>
+				<span class="tooltiptext">Trang chủ</span>
+
+			</div>
+			
+	</div>
+
+	<div id="object-name">
+		<div id="text-name"></div>
+	</div>
+
+	<div id="my-video">
+		<span style='font-size:24px;float: right;margin-right: 10px;' class='fas' onclick="hideInfo()">&#xf00d;</span>
+		<video width="100%" height="95%" controls id="myvideo">
+			<!-- <source src="Video/Video1/phong01.video01.video01.ogv" type="video/ogg"> -->
+			<source src="Video/Video1/phong01.video01.video01.mp4" type="video/mp4">
+		</video>
+	</div>
+
+	<div id="popup2D">
+		<div id="infotext" class="sidebar"></div>
+		<div class="content" id="mycontent">
+		    <span class="close-popup2D" onclick="hideInfo()" >&times;</span>
+	    	
+   			<span class='fas' style="position: absolute;
+							    	font-size:20px;
+								    color: white;
+								    top: 11px;
+								    right: 35px;" 
+								    onclick="zoomOut()">&#xf010;</span>
+			<span class='fas' style="position: absolute;
+							    	font-size:20px;
+								    color: white;
+								    top: 11px;
+								    right: 60px;" 
+								    onclick="zoom()">&#xf00e;</span>
+		    
+
+		    <div id="frame" class="iframe" onmousemove="zoomIn(event)" ontouchmove="zoomIn(event)"></div>
+		    <audio id="sound">
+				<source src="" type="audio/mpeg">
+				<!-- <source src="horse.ogg" type="audio/ogg"> -->
+			</audio>
+		</div>
+	</div>
+
+	<div class="sub-container" id="sub-container" style="background-color: rgba(0,0,0,0.85);">
+		<div class="sub-content" id="sub-scene">
+			
+			<!-- <button class="openbtn" onclick="openNav()">Thông tin</button>   -->
+
+			<!-- <div id="mySidepanel" class="sidepanel">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+			  <a id="info-model">About</a>
+			</div> -->
+			<!-- <span class="close-3D" onclick="hideInfo()" >&times;</span> -->
+			<audio id="sound-model">
+					<source src="" type="audio/mpeg">
+			</audio>
+		</div>
+		<div id="mySidepanel" class="sidepanel">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+			  <a id="info-model">About</a>
+		</div>
+		<button class="openbtn" onclick="openNav()" style="left: 10%;top: 3%;">Thông tin</button>  
+		<span class="close-3D" onclick="hideInfo()" style=" top:5%;transform: translateY(-50%);right: 11%">&times;</span>
+	</div>
+
+	<div id="pleasewait"><div id="pleasewaitcontainer"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
+	
+	<div id="myModal" class="modal">
+	 <div class="modal-content">
+	    <!-- <div class="modal-header">
+	      <span class="close">&times;</span>
+	      <h2>HƯỚNG DẪN</h2>
+	    </div> -->
+	    <div class="modal-body">
+	      <span class="close">&times;</span>
+	      <img src="UI/instructions.png" style="max-width: 100%;height: auto;">
+	    </div>
+	 </div>
+	</div>
+	
+	<div class="btn">
+		<img id="btn-manual" class="image" src="UI/start-manual.png">
+	</div>
+	<div id="game" class="show-game">
+		<iframe class="iframe-game" id="iframe-game" src="" frameborder="20" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<span class="close-game">&times;</span>
+	</div>
+
+	<script src="v2-manual.js"></script>
+
+	<script type="text/javascript">
+		function myFunction() {
+			var textUrl;
+			var rawFile = new XMLHttpRequest();
+		  rawFile.open("GET", "UI/phong01.ui.home.txt", true);
+		  rawFile.onreadystatechange = function() {
+		    if (rawFile.readyState === 4) {
+				var allText = rawFile.responseText;
+			  var splitUrl = allText.substr(3, allText.length - 7);
+		      window.location.replace(splitUrl);
+		    }
+		  }
+		  rawFile.send();
+		}
+	</script>
+</body>
+</html> 

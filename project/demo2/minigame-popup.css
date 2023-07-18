@@ -1,0 +1,1631 @@
+.text-golden {
+    color: #FFC350;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+/*popup settings*/
+.GUI .minigameUI .popup-settings {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #2e2e2ecf;
+}
+
+.GUI .minigameUI .popup-settings .popup-content {
+    width: 600px;
+    position: absolute;
+    height: 340px;
+    top: calc(50% - 170px);
+    left: calc(50% - 300px);
+    border-radius: 5px;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .close-btn {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .close-btn:hover {
+    color: #868080;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .popup-setting-label {
+    position: absolute;
+    top: 0;
+    background-image: url(images/UI/Yellow_M_round\ 1.png);
+    padding: 14px 70px;
+    font-size: 22px;
+    color: white;
+    border-radius: 10px;
+    left: calc(50% - 117px);
+    font-family: 'Skranji';
+    background-size: cover;
+    background-repeat: round;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options {
+    margin: auto;
+    margin-top: 90px;
+    width: 75%;
+    color: white;
+    font-family: 'Avenir';
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .slider-option {
+    margin-bottom: 40px;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .slider-option span {
+    vertical-align: middle;
+    width: 25%;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .slider-option .range-slider .slider {
+    vertical-align: middle;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 7px;
+    background: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .slider-option .range-slider {
+    position: relative;
+    display: inline-block;
+    width: 75%;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .slider-option .range-slider .range-background {
+    position: absolute;
+    top: 8px;
+    left: 2px;
+    height: 7px;
+    border-radius: 10px;
+    width: 100%;
+    background: linear-gradient(180deg, #805923 0%, #31210B 100%);
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: -1;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .slider-option .range-slider .range-val {
+    position: absolute;
+    top: 8px;
+    left: 2px;
+    width: 50%;
+    background: linear-gradient(180deg, #B6D15A 0%, #5F6612 100%);
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    height: 7px;
+    border-radius: 10px;
+    z-index: -1;
+}
+  
+.GUI .minigameUI .popup-settings .popup-content .setting-options .slider-option  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background-image: url('images/UI/Round\ 1.png');
+    background-size: cover;
+    background-repeat: round;
+    background-position: center;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .slider-option  .slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 45px;
+    border-radius: 10px;
+    height: 30px;
+    background-image: url('images/Adjust-Button.png');
+    background-size: initial;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .seperate-line {
+    border-bottom: 4px solid rgba(36, 18, 7, 0.8);
+    margin-bottom: 30px;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .radio-button-option span {
+    vertical-align: middle;
+    width: 25%;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .radio-button-option .radio-label {
+    display: inline-block;
+    vertical-align: top;
+    
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .radio-button-option .radio-label label {
+    font-size: 17px;
+    margin-right: 25px;
+    display: block;
+    font-family: 'Avenir';
+    padding-bottom: 5px;
+    color: #B7A284;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .radio-button-option input:checked + .radio-label label {
+    color: #F1E9DC;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .radio-button-option input {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(images/UI/radio-btn-default.png);
+    background-size: cover;
+    background-repeat: round;
+    border: 1px solid #B7A284;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-settings .popup-content .setting-options .radio-button-option input:checked {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('images/UI/radio-btn-selected.png');
+    background-size: cover;
+    background-repeat: round;
+    border: 1px solid #F1E9DC;
+    border-radius: 20px;
+}
+
+/*popup event*/
+
+.GUI .minigameUI .popup-events {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #2e2e2e94;
+}
+
+.GUI .minigameUI .popup-events .popup-content {
+    width: 900px;
+    position: absolute;
+    height: 570px;
+    top: calc(50% - 285px);
+    left: calc(50% - 450px);
+    border-radius: 5px;
+}
+
+.GUI .minigameUI .popup-events .popup-content .close-btn {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-events .popup-content .close-btn:hover {
+    color: #868080;
+}
+
+.GUI .minigameUI .popup-events .popup-content .popup-events-label {
+    position: absolute;
+    top: 0;
+    font-family: 'Skranji';
+    background-size: cover;
+    background-image: url(images/UI/Yellow_M_round\ 1.png);
+    background-repeat: round;
+    padding: 14px 81px;
+    font-size: 25px;
+    color: white;
+    border-radius: 10px;
+    left: calc(50% - 119px);
+}
+
+.GUI .minigameUI .popup-events .popup-content .events-slider {
+    width: calc(100% - 70px);
+    height: calc(100% - 170px);
+    padding: 35px;
+    padding-top: 115px;
+}
+
+.GUI .minigameUI .popup-events .popup-content .prev-btn {
+    display: inline-block;
+    vertical-align: middle;
+    width: 5%;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-events .popup-content .prev-btn img {
+    width: 100%;
+}
+
+.GUI .minigameUI .popup-events .popup-content .next-btn {
+    display: inline-block;
+    vertical-align: middle;
+    width: 5%;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-events .popup-content .next-btn img {
+    width: 100%;
+}
+
+.GUI .minigameUI .popup-events .popup-content .events-container {
+    display: block;
+    vertical-align: middle;
+    width: calc(90% - 10px);
+    overflow: hidden;
+    height: 370px;
+    position: relative;
+    margin: auto;
+}
+
+.GUI .minigameUI .popup-events .popup-content .events-container .container-slide {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    left: 0;
+}
+
+.GUI .minigameUI .popup-events .popup-content .events-container .events-child {
+    display: inline-block;
+    width: 229px;
+    height: calc(100% - 30px);
+    margin-right: 14px;
+    border: 2px solid #F1E9DC;
+    border-radius: 10px;
+    position: relative;
+}
+
+.GUI .minigameUI .popup-events .popup-content .events-container .events-child img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.GUI .minigameUI .popup-events .popup-content .events-container .events-child .readmore-btn {
+    background-image: url(images/UI/Green_M_round\ 1.png);
+    background-size: cover;
+    background-repeat: round;
+    position: absolute;
+    padding: 15px 25px;
+    bottom: -30px;
+    left: calc(50% - 70px);
+    font-family: 'Skranji';
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    min-width: 90px;
+    text-decoration: none;
+}
+
+/* my account */
+.GUI .minigameUI .popup-my-account {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #2e2e2ecf;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content {
+    width: 800px;
+    position: absolute;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 400px);
+    border-radius: 5px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .close-btn {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .close-btn:hover {
+    color: #868080;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .popup-my-account-label {
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    background-image: url(images/UI/Yellow_M_round\ 1.png);
+    background-repeat: round;
+    padding: 17px 64px;
+    font-size: 21px;
+    color: white;
+    border-radius: 10px;
+    left: calc(50% - 130px);
+    font-family: 'Skranji';
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content {
+    width: 90%;
+    height: calc(100% - 130px);
+    margin: auto;
+    margin-top: 70px;
+    left: 5%;
+    position: absolute;
+    color: white;
+    border-radius: 20px;
+    
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-avatar {
+    width: 40%;
+    display: inline-block;
+    position: relative;
+    height: 100%;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-avatar .border-avatar {
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-avatar .character-img {
+    width: calc(100% - 10px);
+    height: calc(85% - 10px);
+    margin: 5px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-avatar .character-details {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-avatar .character-details .character-details-info {
+    width: calc(50% - 2px);
+    display: inline-block;
+    background-image: url(images/UI/stone-name-bg.png);
+    background-size: cover;
+    background-repeat: round;
+    padding: 16px 0 13px 0;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-avatar .character-details .character-details-info .details-text {
+    width: calc(60% - 10px);
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-avatar .character-details .character-details-info .details-text .label {
+    font-family: 'Avenir';
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-avatar .character-details .character-details-info .details-text .info {
+    font-size: 24px;
+    font-family: 'Skranji';
+    line-height: 23px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-avatar .character-details .character-details-info .details-icon {
+    width: 40%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-avatar .character-details .character-details-info .details-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation {
+    width: calc(60% - 60px);
+    display: inline-block;
+    position: relative;
+    height: calc(100% - 70px);
+    vertical-align: top;
+    background: #5A432D;
+    margin-left: 15px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-id .label {
+    color: #B7A284;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    font-family: 'Avenir';
+    text-transform: capitalize;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-id .info {
+    margin-top: 5px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-id .info span {
+    color: #f1ede6;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    font-family: 'Avenir';
+    font-weight: bold;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-id .info .copy-id-btn {
+    vertical-align: middle;
+    float: right;
+    clear: both;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-id .info .copy-id-btn img {
+    width: 20px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .character-bodypart {
+    height: 130px;
+    margin-top: 10px;
+    background: #3A2816;
+    border-radius: 15px;
+    border-top: 5px solid #322010;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .character-bodypart .label {
+    font-family: 'Avenir';
+    color: #B7A284;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .character-bodypart .list-bodypart {
+    height: calc(100% - 34px);
+    margin: 5px 10px;
+    text-align: center;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .character-bodypart .list-bodypart .part-variation {
+    width: 19%;
+    display: inline-block;
+    position: relative;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .character-bodypart .list-bodypart .part-variation .part-img {
+    width: 60px;
+    height: 60px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .character-bodypart .list-bodypart .part-variation .border {
+    width: 100%;
+    
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .character-bodypart .list-bodypart .part-variation .part-rare {
+    font-family: 'Avenir';
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-activity {
+    height: 95px;
+    margin-top: 10px;
+    background: #3A2816;
+    border-radius: 15px;
+    border-top: 5px solid #322010;
+    font-family: 'Avenir';
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-activity .label {
+    font-family: 'Avenir';
+    color: #B7A284;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-activity .collect-activity {
+    margin: 8px 0;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-activity .collect-item {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-activity .collect-item img {
+    width: 25px;
+    vertical-align: middle;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-activity .collect-item span {
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-activity .login-activity {
+    margin: 0 15px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .account-activity .login-activity span {
+    font-size: 13px;
+}
+
+.GUI .minigameUI .popup-my-account .popup-content .my-account-content .account-infomation .change-hero-btn {
+    background-image: url(images/UI/Green_M_round\ 1.png);
+    background-size: cover;
+    background-repeat: round;
+    position: absolute;
+    padding: 15px 30px;
+    font-family: 'Skranji';
+    font-size: 17px;
+    bottom: -38px;
+    left: calc(50% - 88px);
+    cursor: pointer;
+}
+
+/*popup input login code*/
+
+.GUI .loading-page .popup-login-code {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.GUI .loading-page .popup-login-code .popup-content {
+    width: 700px;
+    position: absolute;
+    height: 460px;
+    top: calc(50% - 230px);
+    left: calc(50% - 350px);
+    border-radius: 5px;
+}
+
+.GUI .loading-page .popup-login-code .popup-content .close-btn {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.GUI .loading-page .popup-login-code .popup-content .close-btn:hover {
+    color: #868080;
+}
+
+.GUI .loading-page .popup-login-code .popup-content .popup-login-code-label {
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    background-image: url(images/UI/Yellow_M_round\ 1.png);
+    background-repeat: round;
+    padding: 17px 64px;
+    font-size: 21px;
+    color: white;
+    border-radius: 10px;
+    left: calc(50% - 130px);
+    font-family: 'Skranji';
+}
+
+.GUI .loading-page .popup-login-code .popup-content .login-code-content {
+    width: 90%;
+    height: calc(100% - 130px);
+    margin: auto;
+    margin-top: 100px;
+    left: 5%;
+    position: absolute;
+    color: white;
+    border-radius: 20px;
+    
+}
+
+.GUI .loading-page .popup-login-code .popup-content .login-code-content .login-code-input {
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.GUI .loading-page .popup-login-code .popup-content .login-code-content .login-code-input p {
+    font-family: 'Avenir';
+    margin: 20px;
+}
+
+.GUI .loading-page .popup-login-code .popup-content .login-code-content .login-code-input input {
+    width: 70%;
+    padding: 9px 15px 7px 15px;
+    border-radius: 11px;
+    font-size: 19px;
+    font-family: 'Skranji';
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #DFD7CA;
+    text-transform: uppercase;
+}
+
+.GUI .loading-page .popup-login-code .popup-content .login-code-content .login-code-input input:focus {
+    outline: none;
+}
+
+.GUI .loading-page .popup-login-code .popup-content .login-code-content .login-code-input .login-code-btn {
+    font-family: 'Skranji';
+    width: 30%;
+    margin: auto;
+    background-size: cover;
+    background-image: url(images/UI/Green_M_round\ 1.png);
+    background-repeat: round;
+    font-size: 20px;
+    padding: 15px 17px;
+    cursor: pointer;
+}
+
+.GUI .loading-page .popup-login-code .popup-content .login-code-content .login-code-input .inactive-btn {
+    background-image: url(images/UI/Gray_M_round\ 1.png);
+    pointer-events: none;
+}
+
+.GUI .loading-page .popup-login-code .popup-content .login-code-content .login-code-tips {
+    text-align: center;
+    font-family: 'Avenir';
+    margin-top: 90px;
+    color: #B7A284;
+}
+
+/*popup message*/
+.GUI .loading-page .popup-message-announcement {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #2e2e2ecf;
+}
+
+.GUI .loading-page .popup-message-announcement .popup-content{
+    width: 440px;
+    position: absolute;
+    height: 340px;
+    top: calc(50% - 170px);
+    left: calc(50% - 220px);
+    border-radius: 5px;
+}
+
+.GUI .loading-page .popup-message-announcement .popup-content .close-btn  {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.GUI .loading-page .popup-message-announcement .popup-content .close-btn:hover {
+    color: #868080;
+}
+
+.popup-content .popup-message-content {
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    position: absolute;
+    padding: 30px;
+    color: #F1E9DC;
+}
+
+.popup-content .popup-title {
+    font-family: 'Skranji';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 41px;
+    color: #F1E9DC;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.popup-content .popup-description {
+    color: #F1E9DC;
+    font-size: 17px;
+    font-family: 'Avenir';
+    white-space: pre-line;
+    margin-top: 45px;
+    min-height: 120px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.popup-content .button-container {
+    text-align: center;
+}
+
+.popup-content .button-container .accept-btn {
+    display: inline-block;
+    background-image: url('images/UI/Green_M_round\ 1.png');
+    background-size: cover;
+    background-repeat: round;
+    min-width: 100px;
+    padding: 10px 20px;
+    font-family: 'Skranji';
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.popup-content .button-container .decline-btn {
+    display: inline-block;
+    background-image: url(images/UI/Orange_M_round\ 1.png);
+    background-size: cover;
+    background-repeat: round;
+    min-width: 120px;
+    padding: 10px 20px;
+    font-family: 'Skranji';
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+/*popup introduction*/
+
+.GUI .minigameUI .popup-introduction {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #2e2e2ecf;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content {
+    width: 880px;
+    position: absolute;
+    height: 560px;
+    top: calc(50% - 280px);
+    left: calc(50% - 440px);
+    border-radius: 5px;
+}
+
+
+.GUI .minigameUI .popup-introduction .popup-content .close-btn {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .close-btn:hover {
+    color: #868080;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .popup-introduction-label {
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    background-image: url(images/UI/Yellow_M_round\ 1.png);
+    background-repeat: round;
+    padding: 15px 55px;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    left: calc(50% - 120px);
+    font-family: 'Skranji';
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-slider {
+    width: calc(100% - 190px);
+    height: calc(100% - 120px);
+    padding: 50px 95px;
+    padding-top: 70px;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-slider .prev-btn {
+    position: absolute;
+    left: 40px;
+    top: calc(50% - 25px);
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-slider .next-btn {
+    position: absolute;
+    right: 40px;
+    top: calc(50% - 25px);
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-slider .slide-navigation {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    min-width: 100%;
+    text-align: center;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-slider .slide-navigation .navigation-child {
+    display: inline-block;
+    margin: 0 2px;
+    width: 20px;
+    border: 3px solid;
+    color: #F1E9DC;
+    background-color: #F1E9DC;
+    border-radius: 10px;
+    opacity: 0.3;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-slider .slide-navigation .selected {
+    opacity: 1;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: flex;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child {
+    width: 690px;
+    height: 100%;
+    background: rgba(23, 10, 2, 0.8);
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .intro-paragraph {
+    padding: 25px;
+    font-family: 'Avenir';
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .intro-paragraph .label {
+    color: #FFC350;
+    font-size: 18px;
+    line-height: 36px;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .intro-paragraph .label .label-number {
+    padding: 1px 7px;
+    border: 2px solid;
+    border-radius: 25px;
+    margin-right: 7px;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .intro-paragraph .content {
+    white-space: normal;
+    margin-top: 5px;
+    padding-left: 40px;
+    line-height: 25px;
+    color: white;
+    font-size: 16px;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .images-x-paragraph {
+    text-align: left;
+    margin: 25px 0;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .images-x-paragraph img {
+    width: 32%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2%;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .images-x-paragraph .paragraph {
+    width: 61%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .intro-control p {
+    font-family: 'Skranji';
+    font-size: 16px;
+    margin: 10px;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .intro-control .intro-control-content {
+    white-space: normal;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .intro-control .intro-control-content .intro-control-child {
+    display: inline-block;
+    width: 30%;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.intro-control .intro-control-content .intro-control-child img {
+    width: 100%;
+    object-fit: scale-down;
+}
+
+.intro-control .intro-control-content .intro-control-child .control-label {
+    font-family: 'Skranji';
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .intro-control .intro-control-content .intro-control-child .intro-control-text {
+    text-align: left;
+    margin-left: auto;
+    width: 150px;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .left-content {
+    width: 70%;
+    display: inline-block;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .left-content .intro-button {
+    width: 100%;
+}
+
+.introduction-child .left-content .intro-button .button-content {
+    width: 20%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin: 0 2%;
+}
+
+.introduction-child .left-content .intro-button .button-content img {
+    width: 100%;
+}
+
+.introduction-child .left-content .intro-button .button-content span {
+    font-family: 'Skranji';
+    font-size: 13px;
+    text-align: center;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+}
+
+.introduction-child .left-content .intro-button .seperator {
+    display: inline-block;
+    border: 1px solid #F1E9DC;
+    width: 7%;
+    vertical-align: middle;
+    margin: 2%;
+}
+
+.introduction-child .left-content .intro-button .button-description {
+    white-space: normal;
+    display: inline-block;
+    width: 37%;
+    color: #F1E9DC;
+    font-family: 'Avenir';
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.intro-avatar {
+    position: relative;
+}
+
+.intro-avatar .avatar-content {
+    height: 220px;
+    position: relative;
+}
+
+.intro-avatar .avatar-content img {
+    transform: scale(0.8);
+    position: absolute;
+}
+
+.intro-avatar .avatar-description {
+    color: #F1E9DC;
+    font-family: 'Avenir';
+    vertical-align: middle;
+    font-size: 13px;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    width: 180px;
+    white-space: normal;
+}
+
+.intro-quest {
+    position: relative;
+}
+
+.intro-quest .quest-content {
+    position: relative;
+}
+
+.intro-quest .quest-content img {
+    position: absolute;
+    transform: scale(0.8);
+}
+
+.intro-quest .quest-description {
+    color: #F1E9DC;
+    font-family: 'Avenir';
+    vertical-align: middle;
+    font-size: 13px;
+    width: 180px;
+    white-space: normal;
+    position: absolute;
+    top: 70px;
+    left: -30px;
+}
+
+.intro-minimap {
+    position: absolute;
+    bottom: 250px;
+}
+
+.intro-minimap .minimap-content {
+    position: relative;
+}
+
+.intro-minimap .minimap-content img {
+    position: absolute;
+    transform: scale(0.8);
+}
+
+.intro-minimap .minimap-description {
+    color: #F1E9DC;
+    font-family: 'Avenir';
+    vertical-align: middle;
+    font-size: 13px;
+    width: 180px;
+    white-space: normal;
+    position: absolute;
+    top: -29px;
+    left: -30px;
+}
+
+.GUI .minigameUI .popup-introduction .popup-content .introduction-container .container-slide .introduction-child .right-content {
+    width: 30%;
+    display: inline-block;
+}
+
+
+/*popup quest finish*/
+.GUI .minigameUI .popup-finish-quest {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #2e2e2ecf;
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content {
+    width: 650px;
+    position: absolute;
+    height: 450px;
+    top: calc(50% - 225px);
+    left: calc(50% - 325px);
+    border-radius: 5px;
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .close-btn {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .close-btn:hover {
+    color: #868080;
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .popup-finish-quest-label {
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    background-image: url(images/UI/Yellow_M_round\ 1.png);
+    background-repeat: round;
+    padding: 13px 50px;
+    font-size: 21px;
+    color: white;
+    border-radius: 10px;
+    left: calc(50% - 100px);
+    font-family: 'Skranji';
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .finish-quest-content {
+    width: 90%;
+    height: calc(100% - 130px);
+    margin: auto;
+    margin-top: 70px;
+    left: 5%;
+    position: absolute;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Avenir';
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .finish-quest-content .quest-reward {
+    margin-bottom: 20px;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .finish-quest-content .quest-reward img {
+    vertical-align: middle;
+    width: 90px;
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .finish-quest-content .quest-reward span {
+    font-family: 'Skranji';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 87px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
+    background: linear-gradient(180deg, #FFEE56 0%, #E98238 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .finish-quest-content .quest-announce {
+    height: 190px;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .finish-quest-content .quest-announce .ticket-code {
+    font-size: 26px;
+    margin: 10px;
+    display: block;
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .finish-quest-content .popup-tips {
+    color: #B7A284;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.GUI .minigameUI .popup-finish-quest .popup-content .finish-quest-content .popup-tips span {
+    font-size: 15px;
+}
+
+/* popup complete */
+.GUI .minigameUI .popup-complete {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #2e2e2ecf;
+}
+
+.GUI .minigameUI .popup-complete .popup-content {
+    width: 650px;
+    position: absolute;
+    height: 450px;
+    top: calc(50% - 225px);
+    left: calc(50% - 325px);
+    border-radius: 5px;
+}
+
+.GUI .minigameUI .popup-complete .popup-content .close-btn {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-complete .popup-content .close-btn:hover {
+    color: #868080;
+}
+
+.GUI .minigameUI .popup-complete .popup-content .popup-complete-label {
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    background-image: url(images/UI/Yellow_M_round\ 1.png);
+    background-repeat: round;
+    padding: 13px 50px;
+    font-size: 21px;
+    color: white;
+    border-radius: 10px;
+    left: calc(50% - 100px);
+    font-family: 'Skranji';
+}
+
+.GUI .minigameUI .popup-complete .popup-content .popup-complete-content {
+    width: 90%;
+    height: calc(100% - 130px);
+    margin: auto;
+    margin-top: 70px;
+    left: 5%;
+    position: absolute;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Avenir';
+}
+
+.GUI .minigameUI .popup-complete .popup-content .popup-complete-content .quest-announce {
+    height: 170px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #d7d2d2;
+}
+
+.GUI .minigameUI .popup-complete .popup-content .popup-complete-content .change-hero-btn, .GUI .minigameUI .popup-complete .popup-content .popup-complete-content .back-to-game-btn {
+    padding: 13px 35px;
+}
+
+/*important notice*/
+.GUI .minigameUI .popup-importance-notice {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #2e2e2ecf;
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content {
+    width: 560px;
+    position: absolute;
+    height: 410px;
+    top: calc(50% - 205px);
+    left: calc(50% - 280px);
+    border-radius: 5px;
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content .popup-title {
+    color: #FF5833;
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content .popup-description {
+    font-size: 14px;
+    line-height: 13px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content .popup-description ul {
+    text-align: left;
+    color: #d4d0c7;
+    margin-bottom: 0;
+    padding-left: 55px;
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content .popup-description ul li::marker {
+    font-size: 24px;
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content .popup-description label {
+    vertical-align: middle;
+    color: #ababab;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content .popup-description #isReadNotice {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #342113;
+    border: 3px solid #87726B;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content .popup-description #isReadNotice::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background-color: #979F52;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content .popup-description #isReadNotice:checked:before {
+    transform: scale(1);
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content .button-container .accept-btn {
+    padding: 15px 20px;
+    color: #b8b8b8;
+    pointer-events: none;
+}
+
+.GUI .minigameUI .popup-importance-notice .popup-content .button-container .active-btn {
+    color: #fff;
+    pointer-events: all;
+}
+
+/*not support mobile*/
+.GUI .loading-page .popup-not-support-mobile {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #2e2e2ecf;
+}
+
+.GUI .loading-page .popup-not-support-mobile .popup-content {
+    width: 750px;
+    position: absolute;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 370px);
+    border-radius: 5px;
+}
+
+.GUI .loading-page .popup-not-support-mobile .popup-content .popup-title {
+    color: #FF5833;
+}
+
+.GUI .loading-page .popup-not-support-mobile .popup-content .popup-description {
+    font-size: 19px;
+    line-height: 25px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 200px;
+    width: 600px;
+}
+
+.GUI .loading-page .popup-not-support-mobile .popup-content .popup-description ul {
+    text-align: left;
+    color: #d4d0c7;
+    margin-bottom: 0;
+    padding-left: 55px;
+}
+
+.GUI .loading-page .popup-not-support-mobile .popup-content .popup-description ul li::marker {
+    font-size: 24px;
+}
+
+.GUI .loading-page .popup-not-support-mobile .popup-content .popup-description label {
+    vertical-align: middle;
+    color: #ababab;
+    cursor: pointer;
+}
+
+/*popup event close*/
+.GUI .loading-page .popup-event-close-announce {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #2e2e2ecf;
+}
+
+.GUI .loading-page .popup-event-close-announce .popup-content {
+    width: 750px;
+    position: absolute;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 370px);
+    border-radius: 5px;
+}
+
+.GUI .loading-page .popup-event-close-announce .popup-content .popup-title {
+    color: #FF5833;
+}
+
+.GUI .loading-page .popup-event-close-announce .popup-content .popup-description {
+    font-size: 19px;
+    line-height: 25px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 200px;
+    width: 600px;
+}
+
+.GUI .loading-page .popup-event-close-announce .popup-content .popup-description ul {
+    text-align: left;
+    color: #d4d0c7;
+    margin-bottom: 0;
+    padding-left: 55px;
+}
+
+.GUI .loading-page .popup-event-close-announce .popup-content .popup-description ul li::marker {
+    font-size: 24px;
+}
+
+.GUI .loading-page .popup-event-close-announce .popup-content .popup-description label {
+    vertical-align: middle;
+    color: #ababab;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1300px) {
+
+    .GUI .minigameUI .popup-my-account .popup-content {
+        transform: scale(0.9);
+    }
+
+    .GUI .minigameUI .popup-events .popup-content {
+        transform: scale(0.9);
+    }
+
+    .GUI .loading-page .popup-login-code .popup-content {
+        transform: scale(0.9);
+    }
+
+    .GUI .minigameUI .popup-settings .popup-content {
+        transform: scale(0.9);
+    }
+
+    .GUI .loading-page .popup-message-announcement .popup-content {
+        transform: scale(0.9);
+    }
+
+    .GUI .minigameUI .popup-introduction .popup-content {
+        transform: scale(0.9);
+    }
+
+    .GUI .minigameUI .popup-importance-notice .popup-content {
+        transform: scale(0.9);
+    }
+
+    .GUI .minigameUI .popup-finish-quest .popup-content {
+        transform: scale(0.9);
+    }
+
+    .GUI .minigameUI .popup-complete .popup-content {
+        transform: scale(0.9);
+    }
+
+    .GUI .loading-page .popup-not-support-mobile .popup-content {
+        transform: scale(0.9);
+    }
+
+    .GUI .loading-page .popup-event-close-announce .popup-content {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .GUI .minigameUI .popup-events .popup-content {
+        transform: scale(0.8);
+    }
+
+    .GUI .minigameUI .popup-my-account .popup-content {
+        transform: scale(0.8);
+    }
+
+    .GUI .loading-page .popup-login-code .popup-content {
+        transform: scale(0.8);
+    }
+
+    .GUI .minigameUI .popup-settings .popup-content {
+        transform: scale(0.8);
+    }
+
+    .GUI .loading-page .popup-message-announcement .popup-content {
+        transform: scale(0.8);
+    }
+
+    .GUI .minigameUI .popup-introduction .popup-content {
+        transform: scale(0.8);
+    }
+
+    .GUI .minigameUI .popup-importance-notice .popup-content {
+        transform: scale(0.8);
+    }
+
+    .GUI .minigameUI .popup-finish-quest .popup-content {
+        transform: scale(0.8);
+    }
+
+    .GUI .minigameUI .popup-complete .popup-content {
+        transform: scale(0.8);
+    }
+
+    .GUI .loading-page .popup-not-support-mobile .popup-content {
+        transform: scale(0.8);
+    }
+
+    .GUI .loading-page .popup-event-close-announce .popup-content {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 500px), (orientation: landscape) and (max-width: 500px) {
+
+    .GUI .minigameUI .popup-events .popup-content {
+        transform: scale(0.5);
+    }
+
+    .GUI .minigameUI .popup-my-account .popup-content {
+        transform: scale(0.5);
+    }
+
+    .GUI .loading-page .popup-login-code .popup-content {
+        transform: scale(0.5);
+    }
+
+    .GUI .minigameUI .popup-settings .popup-content {
+        transform: scale(0.5);
+    }
+
+    .GUI .loading-page .popup-message-announcement .popup-content {
+        transform: scale(0.5);
+    }
+
+    .GUI .minigameUI .popup-introduction .popup-content {
+        transform: scale(0.5);
+    }
+
+    .GUI .minigameUI .popup-importance-notice .popup-content {
+        transform: scale(0.5);
+    }
+
+    .GUI .minigameUI .popup-finish-quest .popup-content {
+        transform: scale(0.5);
+    }
+
+    .GUI .minigameUI .popup-complete .popup-content {
+        transform: scale(0.5);
+    }
+
+    .GUI .loading-page .popup-not-support-mobile .popup-content {
+        transform: scale(0.5);
+    }
+
+    .GUI .loading-page .popup-event-close-announce .popup-content {
+        transform: scale(0.5);
+    }
+}
+

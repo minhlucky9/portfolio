@@ -1,0 +1,236 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    /* -ms-overflow-style: none; 
+   scrollbar-width: none;   */
+   font-family: cursive;
+}
+
+.reveal {
+    overflow: hidden;
+}
+
+.reveal .title {
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal .content{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+  
+.reveal.active .content{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal.active .title{
+    opacity: 1;
+}
+
+
+/* body::-webkit-scrollbar {
+    display: none;
+} */
+
+.overview.active .background {
+    opacity: 1;
+}
+
+.overview.active .user-name {
+    opacity: 1;
+}
+
+.overview.active .user-work {
+    opacity: 1;
+}
+
+
+.overview .background {
+    width: 100vw;
+    height: 100vh;
+    object-position: top left;
+    object-fit: none;
+    transition: 0.5s all ease;
+    opacity: 0;
+}
+
+.overview .user-name {
+    position: absolute;
+    top: calc(25% - 50px);
+    text-align: center;
+    line-height: 70px;
+    font-size: 70px;
+    font-weight: bold;
+    left: 10%;
+    font-family: monospace;
+    transition: 1s all ease;
+    transition-delay: 0.5s;
+    opacity: 0;
+}
+
+.overview .user-work {
+    position: absolute;
+    left: 10%;
+    top: calc(25% + 20px);
+    text-align: center;
+    line-height: 35px;
+    font-size: 35px;
+    font-family: monospace;
+    transition: 1s all ease;
+    transition-delay: 1s;
+    opacity: 0;
+}
+
+.overview .navigator {
+    position: absolute;
+    left: 10%;
+    top: 35%;
+    font-family: cursive;
+    font-size: 22px;
+    color: #333333;
+}
+
+.overview .navigator p {
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 0px;
+    margin: 10px 0;
+    transform: translateY(150px);
+    opacity: 0;
+}
+
+.overview .navigator p:hover {
+    font-style: italic;
+    letter-spacing: 5px;
+}
+
+.about .content {
+    width: 70%;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.about .title {
+    text-align: center;
+    font-family: cursive;
+    font-size: 50px;
+}
+
+.about .content-left {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.about .content-right {
+    padding-left: 5%;
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.about .content-left img {
+    width: 100%;
+    object-fit: cover;
+    min-height: 90vh;
+    border-radius: 10px;
+}
+
+.about .content-right p {
+    text-indent: 30px;
+    font-family: cursive;
+    line-height: 30px;
+}
+
+.list-project {
+    padding: 25px 15%;
+    background: #cfffef;
+}
+
+.list-project .title {
+    font-family: cursive;
+    text-align: center;
+    font-size: 50px;
+    /* font-weight: bold; */
+    padding: 50px;
+}
+
+.list-project .project-child {
+    margin-bottom: 50px;
+}
+
+.list-project .project-child h5 {
+    margin: 0;
+    display: inline-block;
+    font-size: 17px;
+    margin-right: 10px;
+}
+
+.list-project .project-child .name {
+    font-weight: bold;
+    font-size: 25px;
+    font-family: cursive;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #c60000;
+}
+
+.list-project .project-child .tech {
+    margin-top: 15px;
+}
+
+.list-project .project-child .description {
+    text-indent: 30px;
+}
+
+.list-project .project-child .video-demo {
+    text-align: center;
+    padding: 30px;
+}
+
+.list-project .project-child .video-demo video {
+    width: calc(70% + 60px);
+}
+
+.contact {
+    background: #cfffef;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.contact .title {
+    font-family: cursive;
+    text-align: center;
+    font-size: 50px;
+    /* font-weight: bold; */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: inline-block;
+    width: 49%;
+    vertical-align: middle;
+    
+}
+
+.contact .email {
+    display: inline-block;
+    width: 49%;
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.contact .email img {
+    width: 32px;
+    vertical-align: middle;
+}
+
+.contact .email .text-mail {
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}

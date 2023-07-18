@@ -1,0 +1,637 @@
+.GUI .NPCDialog {
+    position: absolute;
+    bottom: 40px;
+    width: 70%;
+    left: calc(15% - 20px);
+    padding: 20px;
+    height: 165px;
+    font-size: 25px;
+    background: rgba(241, 233, 220, 0.9);
+    border: 5px solid #B7A284;
+    border-radius: 126px;
+    text-align: center;
+    
+}
+
+.dialog-content {
+    height: 60%;
+    overflow: auto;
+    font-family: 'Roboto';
+}
+
+.dialog-content p {
+    margin: 0;
+    margin-top: 10px;
+    white-space: break-spaces;
+}
+
+.dialog-button-list {
+    height: calc(40% - 10px);
+    padding-top: 10px;
+    text-align: center;
+}
+
+.dialog-button-list .dialog-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 0 15px;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'Skranji';
+    color: white;
+    font-weight: 400;
+    min-width: 200px;
+    text-transform: uppercase;
+}
+
+.dialog-button-list .orange-bg {
+    background-image: url('images/UI/Orange_M_round\ 1.png');
+    background-size: cover;
+    background-repeat: round;
+}
+
+.dialog-button-list .green-bg {
+    background-image: url('images/UI/Green_M_round\ 1.png');
+    background-size: cover;
+    background-repeat: round;
+}
+
+.GUI .minigameUI {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.GUI .minigameUI .left-content {
+    display: inline-block;
+    width: 25%;
+    position: relative;
+    height: 100%;
+    vertical-align: top;
+}
+
+.GUI .minigameUI .left-content .server-time {
+    position: absolute;
+    color: white;
+    left: 35px;
+    top: 20px;
+    font-family: 'Avenir';
+    line-height: 25px;
+}
+
+.GUI .minigameUI .left-content .avatar {
+    position: absolute;
+    bottom: 50px;
+    left: 35px;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .left-content .avatar .settings-and-info {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    z-index: -1;
+}
+
+.GUI .minigameUI .left-content .avatar .settings-and-info .setting-btn {
+    position: absolute;
+    top: 0;
+    left: 85px;
+}
+
+.GUI .minigameUI .left-content .avatar .settings-and-info .info-btn {
+    position: absolute;
+    top: 16px;
+    right: 25px;
+}
+
+.GUI .minigameUI .left-content .events {
+    position: absolute;
+    top: calc(25% + 145px);
+    left: 35px;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .left-content .events span {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 135px;
+    left: 0;
+    background: rgba(36, 18, 7, 0.8);
+    border-radius: 21px;
+    padding: 2px 0;
+    font-family: 'Skranji';
+    color: white;
+}
+
+.GUI .minigameUI .left-content .leaderboard {
+    position: absolute;
+    top: 25%;
+    left: 35px;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .left-content .leaderboard span {
+    position: absolute;
+    bottom: 8px;
+    text-align: center;
+    width: 135px;
+    left: 0;
+    background: rgba(36, 18, 7, 0.8);
+    border-radius: 21px;
+    padding: 2px 0;
+    font-family: 'Skranji';
+    color: white;
+}
+
+.GUI .minigameUI .center-content {
+    display: inline-block;
+    width: 50%;
+    position: relative;
+    height: 100%;
+    vertical-align: top;
+}
+
+.GUI .minigameUI .center-content .instruction {
+    font-size: 29px;
+    position: absolute;
+    top: 170px;
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    font-family: 'Skranji';
+}
+
+.GUI .minigameUI .center-content .instruction img {
+    width: 70px;
+    vertical-align: middle;
+}
+
+.GUI .minigameUI .center-content .announcement {
+    font-size: 17px;
+    position: absolute;
+    top: 155px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: 'Skranji';
+    text-shadow: 0px 2px 2px rgb(0 0 0 / 25%);
+}
+
+.GUI .minigameUI .center-content .announcement img {
+    width: 350px;
+}
+
+.GUI .minigameUI .center-content .announcement span {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.GUI .minigameUI .center-content .place-name {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50px;
+    text-align: center;
+}
+
+.GUI .minigameUI .center-content .inventory {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+}
+
+.GUI .minigameUI .center-content .inventory-child {
+    width: 110px;
+    height: 110px;
+    border-radius: 12px;
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+}
+
+.GUI .minigameUI .center-content .inventory-child img {
+    width: 100%;
+    height: 100%;
+}
+
+.GUI .minigameUI .center-content .inventory-child .items {
+    position: absolute;
+    top: 7px;
+    width: 78px;
+    height: 60px;
+    left: calc(50% - 39px);
+}
+
+.GUI .minigameUI .center-content .inventory-child .items img {
+    object-fit: contain;
+}
+
+.GUI .minigameUI .center-content .inventory-child .quantity {
+    position: absolute;
+    bottom: 4px;
+    font-size: 17px;
+    width: calc(100% + -2px);
+    color: white;
+    font-family: 'Skranji';
+}
+
+.GUI .minigameUI .center-content .inventory-child .tool-box {
+    position: absolute;
+    top: -190px;
+    left: -26px;
+    background: rgba(36, 18, 7, 0.8);
+    border-radius: 10px;
+    color: white;
+    width: calc(100% + 35px);
+    height: 150px;
+    padding: 10px;
+    display: none;
+}
+
+.GUI .minigameUI .center-content .inventory-child .tool-box .tool-box-name {
+    font-family: 'Skranji';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 6px 0;
+}
+
+.GUI .minigameUI .center-content .inventory-child .tool-box .tool-box-description {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    white-space: break-spaces;
+}
+
+.GUI .minigameUI .center-content .inventory-child .tool-box .tool-box-triangle {
+    width: 20px !important;
+    height: 12px !important;
+    position: absolute;
+    bottom: -12px;
+    left: calc(50% - 10px);
+}
+
+.GUI .minigameUI .right-content {
+    display: inline-block;
+    width: 25%;
+    position: relative;
+    height: 100%;
+    vertical-align: top;
+}
+
+.GUI .minigameUI .right-content .quests {
+    position: absolute;
+    top: 10%;
+    width: 300px;
+    right: 30px;
+}
+
+.GUI .minigameUI .right-content .quests .hide-quest-btn {
+    position: absolute;
+    top: 9px;
+    left: 22px;
+    cursor: pointer;
+}
+
+.GUI .minigameUI .right-content .btn-quest-minimize {
+    position: absolute;
+    top: 10%;
+    right: 35px;
+    pointer-events: all;
+    cursor: pointer;
+    z-index: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+.maximize-animation {
+    animation-name: minimize;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; 
+    animation-direction: reverse;
+}
+
+.minimize-animation {
+    animation-name: minimize;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes minimize {
+    from {transform: scale(1);}
+    to {transform: scale(0)}
+}
+  
+
+
+.GUI .minigameUI .right-content .quests .quest-label {
+    text-align: center;
+}
+
+.GUI .minigameUI .right-content .quests .quest-label .label-background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: -1;
+}
+
+.GUI .minigameUI .right-content .quests .quest-label .quest-label-text {
+    padding: 8px;
+}
+
+.GUI .minigameUI .right-content .quests .quest-label .quest-label-text img {
+    vertical-align: middle;
+}
+
+.GUI .minigameUI .right-content .quests .quest-label .quest-label-text span {
+    vertical-align: middle;
+    font-family: 'Skranji';
+    font-size: 20px;
+    text-align: center;
+    color: #F1E9DC;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.GUI .minigameUI .right-content .quests .quest-content {
+    color: white;
+    position: absolute;
+    background: rgba(36, 18, 7, 0.8);
+    top: 30px;
+    z-index: -2;
+    left: 7px;
+    width: calc(100% - 35px);
+    height: fit-content;
+    padding: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.GUI .minigameUI .right-content .quests .quest-content .tab-label {
+    border-bottom: 1px solid #84674D;
+    padding-bottom: 10px;
+    margin: 0 5px;
+    margin-top: 15px;
+    font-family: "Avenir";
+    letter-spacing: 1px;
+}
+
+.GUI .minigameUI .right-content .quests .quest-content .quest-child {
+    margin: 10px 0;
+}
+
+.GUI .minigameUI .right-content .quests .quest-content .quest-child .quest-child-icon {
+    display: inline-block;
+    vertical-align: top;
+    width: 30px;
+}
+
+.GUI .minigameUI .right-content .quests .quest-content .quest-child .quest-child-content {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 40px);
+}
+
+.GUI .minigameUI .right-content .quests .quest-content .quest-child .quest-child-content .quest-target {
+    font-size: 21px;
+    font-family: 'Avenir';
+}
+
+.GUI .minigameUI .right-content .quests .quest-content .quest-child .quest-child-content .quest-description {
+    white-space: initial;
+    font-size: 14px;
+    color: #B7A284;
+    margin: 7px 0 5px 0;
+    font-family: 'Roboto';
+    white-space: break-spaces;
+}
+
+.GUI .minigameUI .right-content .minimap {
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    width: 250px;
+    height: 250px;
+}
+
+.GUI .minigameUI .right-content .minimap img {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+}
+
+@media screen and (max-width: 1300px), screen and (max-height: 800px) {
+    .GUI .minigameUI .right-content .minimap {
+        width: 210px;
+        height: 210px;
+        bottom: 5px;
+        right: 15px;
+    }
+
+    .GUI .minigameUI .center-content .inventory {
+        bottom: 5px;
+    }
+
+    .GUI .minigameUI .center-content .inventory-child {
+        width: 100px;
+        height: 100px;
+        margin: 0px 10px;
+    }
+
+    .GUI .minigameUI .center-content .inventory-child .quantity {
+        bottom: 5px;
+        font-size: 15px;
+    }
+
+    .GUI .minigameUI .left-content .avatar {
+        bottom: 10px;
+        left: 10px;
+        transform: scale(0.9);
+    }
+
+    .GUI .minigameUI .left-content .leaderboard {
+        top: 25%;
+        left: 10px;
+        transform: scale(0.8);
+    }
+
+    .GUI .minigameUI .left-content .events {
+        top: calc(25% + 125px);
+        left: 10px;
+        transform: scale(0.8);
+    }
+
+    .GUI .minigameUI .right-content .quests {
+        top: 7%;
+        width: 275px;
+        right: 10px;
+    }
+
+    .GUI .minigameUI .right-content .quests .quest-label .quest-label-text {
+        padding: 5px;
+    }
+
+    .GUI .minigameUI .right-content .quests .quest-content .quest-child .quest-child-content .quest-target {
+        font-size: 18px;
+    }
+
+    .GUI .minigameUI .right-content .quests .quest-content .quest-child .quest-child-content .quest-description {
+        font-size: 12px;
+    }
+
+    .GUI .NPCDialog {
+        height: 150px;
+        font-size: 21px;
+    }
+    
+    .dialog-button-list .dialog-btn {
+        padding: 13px 25px;
+        margin: 0 5px;
+        font-size: 20px;
+        min-width: 175px;
+    }
+
+    .dialog-button-list .dialog-btn img {
+        width: 27px !important;
+        height: 27px !important;
+    }
+  }
+
+  @media screen and (max-width: 950px) {
+    .GUI .minigameUI .left-content .avatar {
+        bottom: 0;
+        left: 10px;
+        transform: scale(0.8);
+        top: -35px;
+    }
+
+    .GUI .minigameUI .left-content .leaderboard {
+        top: 155px;
+    }
+
+    .GUI .minigameUI .left-content .events {
+        top: 265px;
+    }
+
+    .GUI .minigameUI .right-content .quests {
+        top: 225px;
+    }
+
+    .GUI .minigameUI .right-content .minimap {
+        bottom: 0;
+        top: 5px;
+    }
+}
+
+@media screen and (max-width: 500px), (orientation: landscape) and (max-height: 500px){
+    .GUI .joystick-controller .rotation-controller {
+        left: calc(100% - 255px);
+        transform: scale(0.6);
+    }
+
+    .GUI .joystick-controller .position-controller {
+        left: -5px;
+        transform: scale(0.6);
+    }
+
+    .GUI .joystick-controller .jump-btn {
+        transform: scale(0.6);
+        left: 100px;
+    }
+
+
+    .GUI .joystick-controller .talk-btn {
+        transform: scale(0.6);
+        right: 100px;
+    }
+
+    .GUI .joystick-controller {
+        bottom: -10px;
+    }
+
+    .GUI .minigameUI .center-content .inventory {
+        transform: scale(0.7);
+        bottom: 0;
+    }
+
+    .GUI .minigameUI .left-content .avatar {
+        transform: scale(0.5);
+        left: -25px;
+        top: 7px;
+        transform-origin: top;
+    }
+
+    .GUI .minigameUI .left-content .leaderboard {
+        transform: scale(0.5);
+        left: -25px;
+        top: 45px;
+    }
+
+    .GUI .minigameUI .left-content .events {
+        transform: scale(0.5);
+        left: -25px;
+        top: 110px;
+    }
+
+    .GUI .minigameUI .right-content .minimap {
+        width: 100px;
+        height: 100px;
+    }
+
+    .GUI .minigameUI .right-content .quests {
+        transform: scale(0.45);
+        top: 100px;
+        transform-origin: right;
+    }
+
+    .GUI .minigameUI .center-content .announcement {
+        transform: scale(0.8);
+        top: 10%;
+    }
+
+    .GUI .minigameUI .center-content .place-name {
+        transform: scale(0.8);
+        top: 10%;
+    }
+
+    .GUI .minigameUI .center-content .instruction {
+        visibility: hidden;
+    }
+
+    .GUI .NPCDialog {
+        bottom: 5px;
+        height: 110px;
+        font-size: 15px;
+        width: 80%;
+        left: calc(10% - 20px);
+        padding: 10px;
+    }
+
+    .GUI .NPCDialog .dialog-button-list .dialog-btn {
+        padding: 11px 0px;
+        margin: 0 5px;
+        font-size: 14px;
+        min-width: 145px;
+    }
+
+    .GUI .NPCDialog .dialog-button-list .dialog-btn img {
+        width: 19px !important;
+        height: 19px !important;
+    }
+}
+
