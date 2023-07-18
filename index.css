@@ -193,8 +193,10 @@ body {
     padding: 30px;
 }
 
-.list-project .project-child .video-demo video {
+.list-project .project-child .video-demo iframe {
     width: calc(70% + 60px);
+    aspect-ratio: 1.7;
+    margin: auto;
 }
 
 .contact {
